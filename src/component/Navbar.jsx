@@ -44,15 +44,15 @@ const Navbar = () => {
         </Flex>
         <Box>
           {
-            login ? <Heading size={'sm'} onClick={()=> setLogin(false)}><u>Login</u></Heading> : 
-            <Flex alignItems={'center'} gap={6}>
-              <RiChat3Line fontSize={25}/>
-              <IoMdNotificationsOutline fontSize={25}/>
-              <Flex alignItems={'center'}>
-              <Image src='https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Clipart.png' alt='Image' borderRadius={'50%'} width="30px"/>
-              <IoIosArrowDown fontSize={20}/>
-              </Flex>
-            </Flex>
+            <Heading size={'sm'} onClick={()=> setLogin(false)}><u>Login</u></Heading>
+            // <Flex alignItems={'center'} gap={6}>
+            //   <RiChat3Line fontSize={25}/>
+            //   <IoMdNotificationsOutline fontSize={25}/>
+            //   <Flex alignItems={'center'}>
+            //   <Image src='https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Clipart.png' alt='Image' borderRadius={'50%'} width="30px"/>
+            //   <IoIosArrowDown fontSize={20}/>
+            //   </Flex>
+            // </Flex>
           }
         </Box>
         <Flex alignItems={'center'} gap={2} border={'1px'} borderRadius={'30px'} p={'5px 20px'}><AiOutlinePlus/>SELL</Flex>
