@@ -1,14 +1,17 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Flex, Heading, Box, Input, InputGroup, InputLeftElement, InputRightElement, Image } from "@chakra-ui/react";
 import { BiSearch } from 'react-icons/bi';
 import { IoIosArrowDown, IoIosArrowUp, IoMdNotificationsOutline } from 'react-icons/io';
 import { RiChat3Line } from 'react-icons/ri';
 import {AiOutlinePlus} from 'react-icons/ai';
+import LoginModule from './LoginModule';
+import { AuthContext } from '../context/AuthContext';
 
 const Navbar = () => {
     const [location, setLocation] = useState(true);
     const [language, setLanguage] = useState(true);
-    const [login, setLogin] = useState(true);
+    const {isAuthorized} = useContext(AuthContext);
+
   return (
     <>
       <Flex justifyContent="space-between" p={'10px 30px'} alignItems='center' bg={'rgb(238,240,243)'}>
@@ -43,17 +46,17 @@ const Navbar = () => {
           </Box>
         </Flex>
         <Box>
-          {
-            <Heading size={'sm'} onClick={()=> setLogin(false)}><u>Login</u></Heading>
-            // <Flex alignItems={'center'} gap={6}>
-            //   <RiChat3Line fontSize={25}/>
-            //   <IoMdNotificationsOutline fontSize={25}/>
-            //   <Flex alignItems={'center'}>
-            //   <Image src='https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Clipart.png' alt='Image' borderRadius={'50%'} width="30px"/>
-            //   <IoIosArrowDown fontSize={20}/>
-            //   </Flex>
-            // </Flex>
-          }
+          {isAuthorized ? (
+            <Flex alignItems={'center'} gap={6}>
+              <RiChat3Line fontSize={25}/>
+              <IoMdNotificationsOutline fontSize={25}/>
+              <Flex alignItems={'center'}>
+                <Image src='https://www.pngall.com/wp-content/uploads/5/Profile-PNG-Clipart.png' alt='Image' borderRadius={'50%'} width="30px"/>
+                <IoIosArrowDown fontSize={20}/>
+              </Flex>
+            </Flex>):(
+              <LoginModule />
+            )}
         </Box>
         <Flex alignItems={'center'} gap={2} border={'1px'} borderRadius={'30px'} p={'5px 20px'}><AiOutlinePlus/>SELL</Flex>
       </Flex>
