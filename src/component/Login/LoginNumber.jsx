@@ -21,7 +21,7 @@ const LoginNumber = ({loginNumberPage1}) => {
         title: verificationCode,
         description: "OLX verification code",
         status: 'success',
-        duration: 9000,
+        duration: 1000,
         isClosable: true,
         position: "top",
       })

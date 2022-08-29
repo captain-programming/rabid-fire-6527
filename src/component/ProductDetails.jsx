@@ -1,15 +1,13 @@
-import React from 'react';
-import {Box, GridItem, Flex, Image, Heading, Text, Spacer, Stack } from '@chakra-ui/react';
+import {Box, GridItem, Flex, Image, Heading, Text } from '@chakra-ui/react';
 import {MdFavoriteBorder} from 'react-icons/md';
 
 const ProductDetails = ({data}) => {
   const {images, location, date, price, description} = data;
-
   const desNew = description[0].slice(0, 40) + "...";
 
   return (
         <GridItem>
-                <Box boxShadow={'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;'} p={'10px 20px'} borderRadius={'10px'} h="260px" >
+                <Box boxShadow={'rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;'} p={'10px 20px'} borderRadius={'10px'} h="260px">
                     <Flex>
                     <Image src={images} alt='' width='45%' height={'140px'} margin="auto" cursor={'pointer'}/>
                     <Box position={'absolute'} ml="18%">

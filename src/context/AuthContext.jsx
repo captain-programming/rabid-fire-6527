@@ -15,7 +15,7 @@ export const AuthProvider = ({children}) => {
             toast({
                 title: "Login Success",
                 status: 'success',
-                duration: 9000,
+                duration: 1000,
                 isClosable: true,
                 position: "top",
               });
@@ -25,7 +25,7 @@ export const AuthProvider = ({children}) => {
             toast({
                 title: "Incorrect Password",
                 status: 'success',
-                duration: 9000,
+                duration: 1000,
                 isClosable: true,
                 position: "top",
               })
